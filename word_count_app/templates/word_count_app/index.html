@@ -4,10 +4,17 @@
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-primary"
-            type="submit">Submit
-    </button>
+    <div class="form-group">
+        {{ form.as_p }}
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
 </form>
+
+<br />
+{% if count_words %}
+    <div>
+        <p class="font-weight-bold">The text contains {{ count_words }} words</p>
+    </div>
+{% endif %}
 
 {% endblock content %}

@@ -15,6 +15,10 @@ class WordCountForm(forms.ModelForm):
 
     class Meta:
         model = WordCountModel
-        # exclude = ("total_words",)
         fields = ["text"]
+        error_messages = {
+            'text': {
+                'required': "Please type any word",
+            },
+        }
 
